@@ -5,200 +5,176 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Predicting GDP per capita for countries using several factors</title>
-        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='assets/favicon.ico')}}" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">Country GDP predictor</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Exploration</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Machine learning</a></li>
-                        <li class="nav-item"><a class = "nav-link" href="#Conclusion">Conclusion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    </ul>
+
+        <!-- Page Header-->
+      
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                          
+                            <h1>Breast Cancer Prediction</h1>
+                            <span class="meta">
+                                Posted by
+                                Anthony Campbell
+                                on May 1, 2022
+                            </span>
+                          
+                                                      <h2 class="subheading">About</h2>
+
+
+
+                          
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-primary bg-gradient text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Predicting GDP per capita for countries using several factors</h1>
-                <p class="lead">A data science project by AI Camp students</p>
-                <a class="btn btn-lg btn-light" href="#about">See our work below</a>
             </div>
         </header>
-        <!-- About section-->
-        <section id="about">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>What does the project do?
-                        </h2>
-                        <p class="lead">In our dataset, there is information on population height, literacy, infant mortality, etc... that correlate with each other in interesting ways. Our goal will be to predict the wealth of nations, which will be measured in GDP per capita. Looking at same characteristics of the dataset, the GDP per capita ranges from $500 to $55,100 and has a standard deviation of $9834</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services section-->
-        <section class="bg-light" id="services">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                    <h1 id="top-level-heading">Exploration</h1><br/>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Exploration of data: Correlation table heatmap</h3>
-                        <p class="lead">First, we created a correlation table to see how different features correlated with the wealth of nations. Some surprising results were that the number of phones per hundred people and male height in cm were highly correlated with GDP per capita. Meanwhile, birthrate and infant mortality were highly negatively correlated</p>
-                    <iframe width="900" height="900" title="Correlation Table of Features" src="{{url_for('static', filename='all_correlation_map.html')}}"></iframe> <br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Exploration of data: Scatterplots</h3>
-                        <p class="lead">Scatterplots clearly demonstrate to us more positive and negative trends in our data. Most surprising to us is that as agricultural goes to zero, GDP becomes exponentially higher.</p>
-                        <iframe width="700" height="700" title="Scatterplots of features in relation to GDP" src="{{url_for('static', filename='GDP scatterplots.html')}}"></iframe> <br><br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3>Visualization of crucial features</h3>
-                        <p class="lead">We isolated the above features that we saw as most important and turned them into their own correlation table, so that we can see how these crucial features affect wealth.</p>
-                        <iframe width="800" height="800" title="Crucial Features Hetmap" src="{{url_for('static', filename='crucial_features_heatmap.html')}}"></iframe>  
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Contact section-->
-        <section id="contact">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h1>Machine Learning</h1></br>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>Linear Regression: Explanation</h2>
-                        <p class="lead">First, we want to try a baseline linear regression. Linear regression assumes that all features are have a linear relation with GDP per capita, and we can fit a line of best fit to predict future values</p>
-                        <img src="{{url_for('static', filename='images/LinearExplanation.png')}}" class="page-image" />
-                    </div>
+        <!-- Post Content-->
 
-                    <div class="col-lg-8">
-                        <h2>Linear Regression: Results</h2>
-                        <p class="lead">Here we have a confusion matrix with the results of the linear regression applied on our testing dataset. A confusion matrix for a classification problem tells us the number of correct and incorrect predictions for every class (for example wealthy). For example, the model may have classified 10 countries with average GDP as average and classified 2 countries with average GDP incorrectly, shown in the below confusion matrix. Linear regression performed exceptionally well on countries with average GDP.</p>
-                        <iframe width="500" height="500" title="Linear Regression Confusion Matrix" src="{{url_for('static', filename='LinearRegressionCF.html')}}"></iframe>  
-                        <p class="lead">By calculating the total correct examples over all examples classified, we get an average accuracy of around 58%. Mean absolute error, or the average difference between predicted and actual GDP per capita, was $3299</p>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>Neural Networks: Explanation</h2>
-                        <p class="lead">Neural networks are one of the most powerful machine learning approaches for data with complicated patterns, but are more prone to overfitting to simple data.</p>
-                        <img src="{{url_for('static', filename='images/nn_explanation.png')}}" class="page-image" width="500"/>
-                    </div>
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>The goal of this project is to predict if a tumor is malignant or if it is benign, meaning that our target variable will be the diagnosis variable. Benign means that a tumor is not cancerous and that it will not spread. However, a malignant tumor means that a tumor is cancerous and is spreading making it very dangerous and can spread to organs and other tissues. In total, there are 30 different features that use statistical measures to try and describe the tumor. For example, there is a radius mean which describes the mean of distances from the center to the perimeter. There is no demographic data about the different tumors.  </p>
+                       
+                      
+                        <h2 class="section-heading">Exploratory Data Analysis</h2>
 
-                    <div class="col-lg-8">
-                        <h2>Neutral Networks: Results</h2>
-                        <p class="lead">Looking at the confusion matrix below, the neural network performed much better on wealthy and very wealthy nations.</p>
-                        <iframe width="500" height="500" title="Neural Network Confusion Matrix" src="{{url_for('static', filename='NeuralNetworkCF_matrix.html')}}"></iframe>
-                        <p class="lead">For total accuracy, the NN performed at 64.4% accuracy in classification. Mean absolute error is $2311</p>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>K Nearest Neighbors: Explanation</h2>
-                        <p class="lead">K Nearest Neighbors looks at data points in the testing set and infers the classification based on similarity to other points of the same class in the training set.</p>
-                        <img src="{{url_for('static', filename='images/knn_explanation.jpeg')}}" class="page-image" width="500"/>
-                    </div>
-                    <div class="col-lg-8">
-                        <h2>K Nearest Neighbors: Results</h2>
-                        <p class="lead">Looking at our confusion matrix below, K Nearest Neighbors performed well on very wealthy and ver poor nations.</p>
-                        <iframe width="500" height="500" title="KNN Confusion Matrix" src="{{url_for('static', filename='KNN_CF_matrix.html')}}"></iframe>  
-                        <p class="lead">For total accuracy, the NN performed at 64.4% accuracy in classification. Mean absolute error is $2311</p>
+<p>One of the first things done is I looked at the distribution of benign and malignant tumors. As you can see, the classes are unbalanced and you can see that there are 357 benign examples and 212 malignant examples. This quickly informs that the F1 score should be used because the data is imbalanced. It’s also important to know the precision and recall and the f1 score provides a convenient score to weigh both of these scores in mind. If either recall is low (i.e. we have too many false negatives) or if precision is low (i.e. we have too many false positives) then the f1 score will drop. We don’t want a situation where we’re predicting that a person doesn’t have a malignant tumor when they do or to tell people that they have a malignant tumor when they don’t so this score takes both of these outcomes into account. Both of these situations are dangerous and so we want a score to reflect this. 
+</p>        
+                      
+<a href="#!"><img class="img" src="static/images/bm_bar_graph.png" alt="..." width=30% 
+     height=30%/></a>
+
+<p> I then made a correlation matrix of all of the different variables. You can see that there are a lot of different variables. You can see that some correlations are very large with the target variable (Diagnosis_M) including radius mean, perimeter worst, and concave points mean. Some that have a low correlation with the target variable are texture standard error (texture_se), symmetry standard error (symmetry_se), and smoothness standard error (smoothness_se).  A correlation that is negative implies that there is a negative or a downward trending relationship with the target variable. A positive implies the opposite of that there is an upward trending relationship with the target. If the absolute value of the correlation is 1, then that means that there is a perfect relationship between the variable and the target or if one value increases the other one increases as well. When it is 0 that means that as one variable increases there is no change in a specific direction for the other. So texture_se has a very weak negative relationship with the diagnosis_m (-0.0083 correlation) while radius worst has a strong positive relationship with diagnosis_m (0.78).
+</p>                      
+                      
+<a href="#!"><img class="img" src="static/images/full_heat_plot.png" 
+                  width=100% 
+     height=100% alt="..." /></a>
+
+<p>I then isolated the variables that were important and conditioned on the fact that if the absolute value of their correlation is greater than a threshold with diagnosis M, I’d keep it. I again create a heat plot correlation so we can see the variables that we will be working with. Interestingly, we see that all of the correlations are positive for the diagnostic_m. 
+</p>
+                      
+<a href="#!"><img class="img" src="static/images/reduced_heatplot.png" alt="..." width=100% 
+     height=100% /></a>
+
+<p>
+  Looking at the scatterplot matrix we see some interesting trends. The orange shows that the class is malignant and blue shows that a class is benign. We see that there seems to be some separability already, as we can split the different classes fairly well, they don’t seem to be all jumbled up together. I.e. we could just draw a line using the different features and we could separate the classes fairly well. There are some interesting trends between the features as there seems to be some collinearity between features (correlation between predictor variables). This makes sense given that a lot of these features are associated to one another. This could be a problem because this means that the features may not be independent from one another and this may lead to overfitting. To mitigate this problem I could try PCA or some different variable transformations/selection. However given the amount of time I have I will train on this model and in future work I would use PCA to reduce the dimensions of the data.
+  </p>
+                          
+<a href="#!"><img class="img" src="static/images/scatterplot_matrix.png" alt="..." width=100% 
+     height=100%/></a>                          
+
+                        
+                        
+                        <h2 class="section-heading">Machine learning</h2>
+<p>I first split the data into a training and testing set, using the training data to train my model and optimize hyperparameters and I used the testing set only for getting the result scores of the models. I used an 80% train 20% test stratified split (stratified to ensure that the benign and malignant classes are sampled evenly). I then used StandardScalar to standardize the data (this is particularly important for the neural network). I also used accuracy and f1 score as my metrics. F1 score because the data is imbalanced and it gives a good understanding of how our model is performing. If either recall is low (i.e. we have too many false negatives) or if precision is low (i.e. we have too many false positives) then the f1 score will drop. Thus, this score is a really great way of seeing how well our model is doing as we don’t want to be telling people that they don’t have a malignant tumor when they do. We also don’t want to tell people that they have a malignant tumor when they don’t so this score takes both of these outcomes into account. I used accuracy as another metric as we want to just see how well we are predicting overall. Ultimately, we also want our model to know what a benign cancer cell is as well, not just what a malignant cancer cell is. We want to see how well we are doing on this because we want our model to be balanced and effective to be able to predict both outcomes.
+</p>
+                      
+<h5 class="section-heading">Support Vector Classifier</h5>
+<a href="#!"><img class="img" src="static/images/support-vector-machine-algorithm.png" alt="..." width=50% 
+     height=50%/></a>                      
+                      <p>The first model that I used was a support vector machine. This model is a great model to start off with for classification because of its simplicity. Essentially, it finds a line that fits the margin of the two classes and then finds the optimal hyperplane between the two. This means that an SVM is effectively trying to maximize the separation between the two classes. I used a grid search to optimize the hyperparameter C (the penalizing parameter for the model for misclassifying) and kept the kernel to only be linear. I made sure the kernel was linear to ensure that the model still has interpretability to it and to make sure that it’s generalizable. If you use some of the other kernels you lose that interpretability in the coefficients as the linear kernel will just try to linearly split the two classes with a hyperplane. If you use a kernel such as a polynomial, you will get a line that isn’t straight to separate the data which means that the coefficients can become much more complex and harder to understand because of the higher degrees. This can be a good idea if your SVM needs a curved decision boundary however for this purpose a linear kernel works very well. I had already tried a polynomial, sigmoid, and radial basis function (RBF) kernels and the linear performed the best so I only used it in my code. Using the coefficients, you can take the dot product of the coefficients and the vector of input values and that tells whether the result will be on the positive or negative side. This means that the linear coefficients give a very intuitive of how the data is performing
+
+From the results, we see that the SVM performed very well. It achieved an f1 score of 0.9630 and an accuracy of 0.9737. This is a very strong performance and a good indicator that if a simple model can perform so well a much more complex model may be able to create better classifications. One worrying aspect of the SVC is that it incorrectly predicts that three input values incorrectly is saying that they’re benign when they should be malignant.  
+</p>                      
+
+<a href="#!"><img class="img" src="static/images/svc_confusionMatrix.png" alt="..." width=30% 
+     height=30%/></a>                          
+
+                      
+                      
+<h5 class="section-heading">Random Forest</h5>                          
+<a href="#!"><img class="img" src="static/images/random-forest-diagram.svg" alt="..." width=50% 
+     height=50%/></a>
+<p>The second model I used was a random forest. This model is an ensemble method and is a more complex classifier than a normal decision tree. A random forest is composed of a bunch of decision trees with different subsections of the data to train on. These decision trees then each predict a vote and the class that has the most votes is the predicted value. I optimized this random forest using a randomized cross validation search to tune the hyperparameters such as the depth, the number of estimators, and the max features. 
+</p>
+                      
+<a href="#!"><img class="img" src="static/images/rf_confusionMatrix.png" alt="..." width=30% 
+     height=30%/></a>                          
+<p>The results showed that the random forest underperformed compared to the simpler model of the SVM. This came as a bit of a surprise as ensemble methods generally work better at classification than a simpler classification method such as SVM. However, sometimes simpler can be better. I chose this model as an in between a neural network and SVM in terms of complexity, a random forest loses some of its explainability as you have a bunch of different models. You can look at the feature importance which is based on the mean decrease in impurity which gives some understanding of how the model made its choices but it doesn’t completely give a reason for why it’s making certain decisions. For example it doesn’t explain why there are five false negatives and one false positive. It achieved an f1 score of 0.9250 and an accuracy of 0.9474
+</p>                          
+
+<h5 class="section-heading">Artificial Neural Network</h5>
+<a href="#!"><img class="img" src="static/images/ann.png" alt="..." width=50% 
+     height=50%/></a>                   
+
+<p>The final model I created was a neural network. For this model, I added different layers using the relu function as my activation function and sigmoid for my final layer. I also included some dropout layers in the middle which randomly sets its inputs to 0, this is a method to prevent overfitting. I then compiled the function using an adam optimizer which is just a fancier form of gradient descent which takes advantage of momentum and the root mean square propagation.  I then ran it for 100 epochs and fit it to the training data, using binary cross entropy as my loss function (essentially comparing how far off the predicted values are from the actual values). This achieved the best accuracy and f1 score of 0.9762 and an accuracy of 0.9825.
+</p>
+                      
+<a href="#!"><img class="img" src="static/images/ann_confusionMatrix.png" alt="..." width=30% 
+     height=30%/></a>                          
+
+<p>This method achieved slightly higher scores than the SVM which was a surprise. I chose this model as it is very complex and is able to achieve very strong classification results on many different types of problems. However, for this situation it performed marginally better than the simpler model. This could reflect how I’ve isolated the features and it could just be that I need to create a deeper and more robust neural network (playing around more with dropout layers, different activation functions, the number of layers, etc.). However, it is interesting that it’s making one false negative which is less than the random forest and svm and only one false positive. Obviously, this is less severe of an error than the svm and the random forest.
+</p>                      
+                      
+
+                        <h2 class="section-heading">Conclusion</h2>
+<a href="#!"><img class="img" src="static/images/result.png" alt="..." width=30% 
+     height=30%/></a>                    
+                        
+                        <p>The best models were the SVM and the ANN. For both train time and complexity, the SVM is easier to understand and much quicker to train. It produces results that are incredibly close to the neural network. However, given the severity of the situation and confusion matrices for both, the best model is the ANN. The SVM seems to be misclassifying some malignant tumors and predicting that they’re benign instead. The ANN seems to be producing more accurate results and has an overall more balanced F1 score and you can see in the confusion matrix that it’s misclassifying a benign as a malignant and only one malignant as a benign. The severity of this mistake could potentially hurt someone and lead them to believe that they don’t have a dangerous cancer when they do.
+</p>
+                      
+                      <p>Ultimately, I was able to correctly classify malignant tumors based off the features I was given in this dataset. This helps solve the problem of quickly identifying tumor types for patients based on these features and this classifier also serves as a way of double checking a doctor’s work. This classifier would be used in conjunction with a doctor to help them get better care for their patients. Doctors are human beings too and make mistakes sometimes and they face incredible stress. Therefore, the importance of this project is to not only help doctors identify malignant tumors but to also to help ensure that patients receive the best care possible.
+                      </p>                      
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="bg-light" id="Conclusion">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                    <h1 id="top-level-heading">Conclusion</h1><br/>
-                    </div>
-                    <div class="col-lg-8">
-
-                        <p class="lead">In conclusion, neural networks clearly performed the best on our dataset for predicting GDP per capita. Positively correlated features like height and phone usage along with negatively correlated features like birthrate and agriculture helped us achieve these results. </p>
-
-                        <h3>So what?</h3>
-                            
-                        <p class="lead">So what is the significance of our project? Because we know which features are most correlated with a higher GDP country, we can identify both the factors that lead to countries with higher monetary value and also predict and then invest in countries with a high likelihood of future growth. </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section style="margin-left: 80px; margin-right: 80px;" id="team">
-        <header class="bg-primary text-center py-5 mb-4">
-            <div class="container px-4">
-              <h1 class="fw-light text-white">Meet the Extraordinary AI Camp Team</h1>
-            </div>
-          </header>
-          
-          <!-- Page Content -->
-          <div class="container px-4">
-            <div class="row">
-              <!-- Team Member 1 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/rohan_img.png')}}" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Rohan Joshi</h5>
-                    <div class="card-text text-black-50">Web Developer</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 2 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/alex_duffy_img.png')}}" height="330" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Alex Duffy</h5>
-                    <div class="card-text text-black-50">Instructor</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 3 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/mitchell_img.png')}}" height="350" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Mitchell Cutts</h5>
-                    <div class="card-text text-black-50">Instructor</div>
-                  </div>
-                </div>
-              </div>
-              <!-- Team Member 4 -->
-              <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-0 shadow">
-                  <img src="{{url_for('static', filename='images/cameron_jackson_img.jfif')}}" height="250" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 class="card-title mb-0">Cameron Jackson</h5>
-                    <div class="card-text text-black-50">Data Scientist</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.row -->
-          
-          </div>
-        </section>
+        </article>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; AI Camp 2022</p></div>
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                    </div>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/static/js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
-2>
